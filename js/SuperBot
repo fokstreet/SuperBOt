@@ -65,6 +65,7 @@ if (btnK != undefined || btnYa != undefined){
             location.href='https://yandex.ru/';
         }
         else if (links[index].href.indexOf (site) !=-1) // алгоритм для возврата на сайт, выбранный  для прогулки
+            links.removeAttribute('target');
             links[index].click();
     },getRandom(3000, 7000));
 }else{
@@ -73,6 +74,7 @@ if (btnK != undefined || btnYa != undefined){
     for (let i=0; i<links.length; i++){
         if(links[i].href.indexOf(site) != -1){
             let link = links[i];
+            links.removeAttribute('target');
             nextGooglePage = false;
             nextYandexPage = false;
             setTimeout(()=>{link.click();}, getRandom(1000, 4000));
